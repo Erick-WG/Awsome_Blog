@@ -97,6 +97,17 @@ pip install -r requirements.txt
 ## Creating the database.
 For the database we need to make sure first we are on the right directory _( BlogApp )_, then we need to make migrations to our local database, by running a command that utilizes the _manage.py_ file
 
+Initially the database starts the moment we run the server, we also need to make sure our models are updated in our db, by running the command.
+
+```bash
+python manage.py makemigrations
+python manage.py migrate
+```
+
+Our database creates tables for our models and we are set to go.
+
+Congrats you've successfully created the database. 🌟⭐
+
 ## Creating the superuser.
 You'll need a super user in order to manage the sites data from a user interface, creating a super user allows you to utilize the admin dashboard and you can also create, modify and delete users and blogs for the site.
 
