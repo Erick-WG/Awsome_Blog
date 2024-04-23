@@ -4,7 +4,7 @@ from django.views.generic import ListView, DetailView, CreateView, UpdateView, D
 #importing our custom form.
 from .forms import PostForm, EditForm
 # importing out models
-from .models import Category, Post
+from .models import  Post, Category
 #importing our lazy folder for redirecting successful links.
 from django.urls import reverse_lazy
 
@@ -37,7 +37,7 @@ class AddPostView(CreateView):
 
 class AddCategoryView(CreateView):
     model = Category
-    # form_class = PostForm
+    form_class = PostForm
     template_name = "add_category.html"
     # specifying the form fields. they can also be custom made.
     fields = "__all__"
