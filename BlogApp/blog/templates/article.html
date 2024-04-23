@@ -1,0 +1,41 @@
+
+{% extends 'base.html' %}
+
+{% block title %}
+    {{ post.title}}
+{% endblock %}
+
+{% block content %}
+
+<div class="container">
+    <h3>{{ post.title }}</h3>
+        <small>{{ post.author }} - {{ post.post_date }}
+            {% if user.is_authenticated %}
+                - <a href="{% url 'update_post' post.pk %}">{Edit}</a>
+                <a href="{% url 'update_post' post.pk %}">{Update}</a>
+            {% endif %}
+            </small>
+        <br><br>
+        <hr>
+        <p class="lead">
+            <p class="mb-0">{{ post.body }}</p>
+            <br>
+
+            <footer class="blockquote-footer">{{ post.author }} in <cite title="Source Title">{{ post.title }}</cite></footer>
+        </p>
+
+        <!-- <div class="lead">
+            {{ post.body }}
+        </div> -->
+        
+        <br><br>
+
+    <button class="btn btn-primary"><a href="{% url 'home' %}" style="color: aliceblue; text-decoration: none;">BACK</a></button>
+
+<!-- Only logged in users can delete posts. -->
+    {% if user.is_authenticated %}
+        <button class="btn btn-danger" ><a href="{% url 'delete_post' post.pk %}" style="color: aliceblue; text-decoration: none;">Delete</a></button>
+    {% endif %}
+
+</div>
+{% endblock %}
