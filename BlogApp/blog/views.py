@@ -10,10 +10,10 @@ from django.urls import reverse_lazy
 
 
 '''The views have been built to follow the CRUD operations in building apps
-    C- Create 'The view class ['AddCategoryView','AddPostView'] both are under C'
-    R- Read 'The view class  '
-    U- Update
-    D- Delete
+    C- Create 'The view class ['AddCategoryView','AddPostView'] both are under C, they are create views.'
+    R- Read 'The view class ['homeView'] performs read functionalities to our db.'
+    U- Update 'The updatePost view does that, updates our posts.'
+    D- Delete 'And lastly the DeletePost view deletes blogs from our db.'
 '''
 
 class HomeView(ListView):
@@ -37,10 +37,10 @@ class AddPostView(CreateView):
 
 class AddCategoryView(CreateView):
     model = Category
-    form_class = PostForm
     template_name = "add_category.html"
+    form_class = PostForm
     # specifying the form fields. they can also be custom made.
-    fields = "__all__"
+    # fields = "__all__"
 
 
 # Updating the view.
@@ -48,7 +48,7 @@ class UpdatePost(UpdateView):
     model = Post
     template_name = "update_post.html"
     form_class = EditForm
-    #fields = ['title', 'title_tag', 'body']
+    # fields = ['title', 'title_tag', 'body']
 
 
 

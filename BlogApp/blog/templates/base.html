@@ -33,11 +33,11 @@
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'add_post' %}">Create</a>
               </li>
-              {% comment %} <li class="nav-item"> {% endcomment %}
-                {% comment %} <a class="nav-link" href="{% url 'add_category' %}">Add Category</a> {% endcomment %}
-              {% comment %} </li> {% endcomment %}
               <li class="nav-item">
-                <a class="nav-link" href="{% url 'logout' %}">logOut</a>
+                <a class="nav-link" href="{% url 'add_category' %}">Add Category</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">log out</a>
               </li>
               
           {% else %}
