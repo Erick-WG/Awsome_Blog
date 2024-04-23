@@ -4,5 +4,5 @@ from .views import CreateUserForm #, Logout
 
 urlpatterns = [
     path('register/', CreateUserForm.as_view(), name="register"),
-    # path('logout/', Logout.as_view(), name="logout"),
+    # path('logout/', Logout.as_view(), name="members/logout"),
 ]
